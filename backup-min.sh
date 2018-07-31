@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ### Minimal Database Backup Script - Excluding the data from large tables ###
-DB_USER="dbuser"
+DB_USER="root"
 DB="${1:-moodle}"
 FILE=${2:-$DB}
 DIR="/home/backup/dumps"
