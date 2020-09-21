@@ -38,12 +38,12 @@ fi
 if [ -d "$INSTALL_PLUGIN_PATH" ]; then
 	echo "local_moodlecheck plugin already installed..."
 else
-	echo "Installing local_moodlecheck plugin..."	
+	echo "Installing local_moodlecheck plugin..."
 	cd $INSTALL_PATH
 	git clone https://github.com/moodlehq/moodle-local_moodlecheck local/moodlecheck
 fi
 
 # Check the specified code.
 
-$PHP $INSTALL_PLUGIN_PATH/cli/moodlecheck.php --path=$CHECK_PATH >> $LOG_PATH
+$PHP $INSTALL_PLUGIN_PATH/cli/moodlecheck.php --path=$CHECK_PATH > $LOG_PATH
 echo "Results written to: $LOG_PATH"
