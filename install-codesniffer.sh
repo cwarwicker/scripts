@@ -18,14 +18,14 @@ echo
 cp moodle-local_codechecker/moodle/ ~/.config/composer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/ -r
 cp moodle-local_codechecker/PHPCompatibility/ ~/.config/composer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/ -r
 
-echo 'Creating bash alias codecheck...'
-echo
-unalias codecheck
-alias codecheck='f(){ php ~/.config/composer/vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=moodle --report="${2:-full}" ./"${1}"; }; f'
+CODECHECK_ALIAS='alias codecheck='\''f(){ php ~/.composer/vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=moodle --report="${2:-full}" ./"${1}"; }; f'\'''
 
 echo 'Finished'
 echo 
 echo 'Usage: cd path/to/moodle; codecheck /path/to/plugin reporttype'
 echo 'Example: codecheck /local/openid_connect'
 echo 'Example: codecheck /local/openid_connect summary'
+echo '------------------------------------------------'
+echo 'Add the following alias to your .bashrc file and reload the source:'
+echo $CODECHECK_ALIAS
 
