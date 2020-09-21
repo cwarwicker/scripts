@@ -3,6 +3,7 @@
 # Check that 2 arguments were passed
 if [ "$#" -ne 2 ]; then
 	echo "Usage: $0 <path-to-moodle-repo> <path-to-check>"
+	echo "E.g. $0 /var/www/html/moodle/ local/myplugin/"
 	exit 1
 fi
 
