@@ -1,4 +1,0 @@
-0 0 * * * /usr/bin/sh /home/backup/scripts/backup.sh moodle > /home/backup/backup_logs
-0 0 * * * /usr/bin/sh /home/backup/scripts/backup-daily.sh moodle > /home/backup/backup_logs
-0 12 * * * /usr/bin/sh /home/backup/scripts/backup.sh moodle moodle_midday > /home/backup/backup_logs
-30 17 * * * /usr/bin/sh /home/backup/scripts/backup.sh moodle moodle_evening > /home/backup/backup_logs

@@ -1,0 +1,12 @@
+[alias]
+  update = !git pull && git submodule update --init --recursive
+  amend = !git commit --amend --no-edit
+  conflicts = !git diff --check
+  make = "!f() { BRANCH=`git rev-parse --abbrev-ref HEAD`; git push --set-upstream origin ${1:-${BRANCH}}; }; f"
+  pub = "!f() { BRANCH=`git rev-parse --abbrev-ref HEAD`; git push origin HEAD:refs/for/${1:-${BRANCH}}; }; f"
+  draft = "!f() { BRANCH=`git rev-parse --abbrev-ref HEAD`; git push origin HEAD:refs/drafts/${1:-${BRANCH}}; }; f"
+  last = !git log -1
+  history = log --oneline --decorate --all --graph
+  lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  cp = !git cherry-pick
+  show-files = "!f() { git show ${1} --name-only; }; f"

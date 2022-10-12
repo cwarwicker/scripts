@@ -1,0 +1,20 @@
+
+# Docker aliases #
+
+# Stop all running docker containers
+alias docker-stop='docker stop $(docker ps -q)'
+
+# Get the IP address of the named docker container
+alias docker-ip='f() { docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" "${1}"; }; f'
+
+# Get the IP address of all running docker containers
+alias docker-ip-all='f(){ docker ps -q | xargs -n 1 docker inspect --format "{{.Name }} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" | sed "s/^\///"; }; f'
+
+# Login to the bash terminal of the named docker container
+alias docker-ssh='f(){ docker exec -it "${1}" bash; }; f'
+
+
+# General bash aliases #
+
+# Download a file from remote server and stored in /home/logs/<name>.
+alias steal='f(){ mkdir -p /home/logs/"${3}";  rsync -avzhe ssh <user>@"${2}":"${1}" /home/logs/"${3}"/; }; f'
