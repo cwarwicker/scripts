@@ -1,0 +1,35 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.8.5)
+      public_suffix (>= 2.0.2, < 6.0)
+    git (1.18.0)
+      addressable (~> 2.8)
+      rchardet (~> 1.8)
+    parseconfig (1.1.2)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
+    public_suffix (5.0.3)
+    rchardet (1.8.0)
+    tty-color (0.6.0)
+    tty-cursor (0.7.1)
+    tty-prompt (0.23.1)
+      pastel (~> 0.8)
+      tty-reader (~> 0.8)
+    tty-reader (0.9.0)
+      tty-cursor (~> 0.7)
+      tty-screen (~> 0.8)
+      wisper (~> 2.0)
+    tty-screen (0.8.1)
+    wisper (2.0.1)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  git
+  parseconfig
+  tty-prompt
+
+BUNDLED WITH
+   2.3.5
